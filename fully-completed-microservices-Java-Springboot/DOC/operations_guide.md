@@ -22,6 +22,36 @@ Run this from the project root (`fully-completed-microservices-Java-Springboot`)
 ```
 *   **What it does**: Forcefully terminates all Java processes to ensure ports are freed.
 
+### 🏗️ Build & Maintenance
+
+### Build All Services
+```powershell
+.\scripts\build_all.ps1
+```
+*   **What it does**: Runs `mvn clean package -DskipTests` for every service sequentially.
+*   **Use when**: You've made changes to multiple services or want to verify the entire project compiles.
+
+### Clean All
+```powershell
+.\scripts\clean_all.ps1
+```
+*   **What it does**: Removes the `target/` directory from all services.
+*   **Use when**: You want to free up disk space or force a fresh compilation.
+
+### 🔍 Monitoring & Testing
+
+### Check Status
+```powershell
+.\scripts\check_status.ps1
+```
+*   **What it does**: Pings all actuator health endpoints to see which services are UP or DOWN.
+
+### Run E2E Tests
+```powershell
+.\scripts\run_tests.ps1
+```
+*   **What it does**: Executes the full integration test suite (Customer -> Product -> Order).
+
 ---
 
 ## 🛠️ Manual Build & Run Commands
